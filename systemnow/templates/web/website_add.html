@@ -1,0 +1,60 @@
+{% extends 'web/base.html' %}
+
+{% load static %}
+{% block body %}
+
+  <div class="page-inner">
+                    <div class="page-title">
+                        <h3 class="breadcrumb-header">Add Website</h3>
+                    </div>
+                    <div id="main-wrapper">
+                        <div class="row">
+                            <form action="/website_overview/" method="post" >
+                                {% csrf_token %}
+                              <div class="form-row">
+                                     <div class="form-group col-md-6">
+                                            <label for="inputCity">Name</label>
+                                            <input type="text" class="form-control" id="inputCity" placeholder="Name, Hostname or other for easy identification." name="name">
+                                     </div>
+                                  <div class="form-group col-md-4">
+                                        <label for="inputState">Location</label>
+                                            <select id="inputState" class="form-control" name="location">
+                                                 <option selected>Mumbai</option>
+                                                <option>Delhi</option>
+                                                <option>London</option>
+                                            </select>
+                                    </div>
+
+                                   <div class="form-group col-md-2">
+                                        <label for="inputState">Interval</label>
+                                            <select id="inputSta" class="form-control" name="interval">
+                                                 <option selected>1 minute</option>
+                                                <option>5 minute</option>
+                                                <option>10 minute</option>
+                                                <option>15 minute</option>
+                                                <option>30 minute</option>
+                                                <option>1 hours</option>
+                                            </select>
+                                    </div>
+
+  </div>
+                                    <div class="form-group col-md-6">
+                                          <label for="inputEmail4">Url</label>
+                                          <input type="email" class="form-control" id="inputEmail" placeholder="http://domain.com/" name="url">
+                                        </div>
+                                  <div class="form-group col-md-6">
+                                          <label for="inputEmail4">String *</label>
+                                          <input type="email" class="form-control" id="inputEmail4" >
+                                        </div>
+
+
+
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-primary ">Add Server</button>
+                                </div>
+                            </form>
+
+
+
+                        </div>
+{% endblock %}

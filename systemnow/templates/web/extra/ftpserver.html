@@ -1,0 +1,26 @@
+{% extends 'web/base.html' %}
+
+{% load static %}
+{% block body %}
+   <div class="page-inner">
+                    <div class="page-title">
+                        <h3 class="breadcrumb-header">Dashboard</h3>
+                    </div>
+                    <div id="main-wrapper">
+                        <div class="row">
+                           <!-- Row -->
+                           <div class="col-lg-12 col-md-6">
+                            <p>
+                                Monitor critical metrics such as server availability, round-trip-time, average response time, file upload time, file download time and response time using this Basic Monitor. Once you add your FTP server for monitoring, Site24x7 will use a test file to check the upload and download functions. An FTP server will be reported unavailable in following cases.  </p>
+                            <ul>
+                                <li>The server is not accessible.</li>
+                                <li>The user name/password is invalid in the case of authenticated FTP servers.</li>
+                                <li>Response time crosses your specified threshold.</li>
+                                <li>File upload or download time crosses your specified threshold.</li>
+                                <li>This is a Basic Monitor.</li>
+                              </ul>
+                              <button type="button" class="btn btn-primary">Add a FTP Transfer Monitor</button>
+                              <button type="button" class="btn btn-primary ">Add a FTP Server</button>
+                        </div>
+
+{% endblock %}

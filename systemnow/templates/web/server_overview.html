@@ -1,0 +1,388 @@
+{% extends 'web/base.html' %}
+
+{% load static %}
+{% block body %}
+
+<div class="page-inner">
+                    <div class="page-title">
+
+                       <button type="button" class="btn btn-outline-primary mr-5"><a href="/server1/">overview</a></button>
+                        <button type="button" class="btn btn-outline-primary"><a href="/server_cpu/">CPU</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_memory/">Memory</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_storage/">Storage</a></button>
+                      <button type="button" class="btn btn-outline-primary "><a href="/server_network/">Network</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_processes/">Processes</a></button>
+                      <button type="button" class="btn btn-outline-primary "><a href="/server_alert/">Alerting</a></button>
+                        <button type="button" class="btn btn-outline-primary"><a href="/server_incident/">Incidents</a></button>
+                        <button type="button" 	id="datetime" class="btn btn-outline-primary pull-right"><a href="/server_incident/">Incidents</a></button>
+                        <script>
+                            var d = new Date();
+                            document.getElementById("datetime").innerHTML = d;
+                        </script>
+
+
+                        <div id="main-wrapper pt-5">
+                        <div class="row">
+                            <br>
+                            <br><!-- Row -->
+                        <div class="row">
+
+
+
+                            <div class="col-lg-4 col-md-6">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading clearfix">
+                                        <h4 class="panel-title">Server Info</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="browser-stats">
+                                            <ul class="list-unstyled">
+                                                <li>Hostname<div class="text-success pull-right">abhishek</div></li>
+                                                <li>OS<div class="text-success pull-right">Linux</div></li>
+                                                <li>Kernal<div class="text-success pull-right">3.10.0-1062.18.1.el7</div></li>
+                                                <li>Architecture<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Server Time<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Uptime<div class="text-success pull-right">x86_64</div></li>
+                                                <li>CPU Model<div class="text-success pull-right">x86_64</div></li>
+                                                <li>CPU Cores<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Load<div class="text-success pull-right">x86_64</div></li>
+                                                <li>RAM<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Swap<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Internal- IP<div class="text-success pull-right">192.168.31.130</div></li>
+                                                <li>SSH Sessions<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Active Connections<div class="text-success pull-right">74:df:bf:5d:cb:31</div></li>
+                                                <li>PING Latency<div class="text-success pull-right">x86_64</div></li>
+                                                <li>Agent Version<div class="text-success pull-right">x86_64</div></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 col-md-12">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading clearfix">
+                                        <h4 class="panel-title">Ram Status</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="container-fluid">
+                                            <div class="server-load row">
+                                                <div class="server-stat col-sm-4">
+                                                    <p>8GB</p>
+                                                    <span>Total</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>4.2GB</p>
+                                                    <span>Using</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>57.4%</p>
+                                                    <span>CPU</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="chart2"><svg></svg></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-8 col-md-12">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading clearfix">
+                                        <h4 class="panel-title">Disk Status</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="container-fluid">
+                                            <div class="server-load row">
+                                                <div class="server-stat col-sm-4">
+                                                    <p>167GB</p>
+                                                    <span>Usage</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>320GB</p>
+                                                    <span>ecaps</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>57.4%</p>
+                                                    <span>CPU</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="chart2"><svg></svg></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </div>
+                        <div class="row">
+                               <div class="col-md-4">
+                            <div class="panel panel-white">
+                                <div class="panel-heading clearfix">
+                                    <h4 class="panel-title">Disk Usage</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Mount</th>
+                                                <th>Used</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>/</td>
+                                                <td>26%</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>/boot</td>
+                                                <td>45%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>/home</td>
+                                                <td>26%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                                <div class="col-lg-8 col-md-12">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading clearfix">
+                                        <h4 class="panel-title">Disk Status</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="container-fluid">
+                                            <div class="server-load row">
+                                                <div class="server-stat col-sm-4">
+                                                    <p>167GB</p>
+                                                    <span>Usage</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>320GB</p>
+                                                    <span>ecaps</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>57.4%</p>
+                                                    <span>CPU</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="chart2"><svg></svg></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                         <div class="row">
+                               <div class="col-md-4">
+                            <div class="panel panel-white">
+                                <div class="panel-heading clearfix">
+                                    <h4 class="panel-title">Network Usage</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Interface</th>
+                                                <th>In</th>
+                                                <th>Out</th>
+                                                <th>Total</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>wlp1s0</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                                <div class="col-lg-8 col-md-12">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading clearfix">
+                                        <h4 class="panel-title">Network Speed</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="container-fluid">
+                                            <div class="server-load row">
+                                                <div class="server-stat col-sm-4">
+                                                    <p>167GB</p>
+                                                    <span>Usage</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>320GB</p>
+                                                    <span>ecaps</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>57.4%</p>
+                                                    <span>CPU</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="chart2"><svg></svg></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                             <div class="row">
+                               <div class="col-md-4">
+                            <div class="panel panel-white">
+                                <div class="panel-heading clearfix">
+                                    <h4 class="panel-title">Network Usage</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Interface</th>
+                                                <th>In</th>
+                                                <th>Out</th>
+                                                <th>Total</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>wlp1s0</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+
+                                            <tr>
+                                                <td>lo</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+                                                <td>189MB</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                                <div class="col-lg-8 col-md-12">
+                                <div class="panel panel-white">
+                                    <div class="panel-heading clearfix">
+                                        <h4 class="panel-title">Network Speed</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="container-fluid">
+                                            <div class="server-load row">
+                                                <div class="server-stat col-sm-4">
+                                                    <p>167GB</p>
+                                                    <span>Usage</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>320GB</p>
+                                                    <span>ecaps</span>
+                                                </div>
+                                                <div class="server-stat col-sm-4">
+                                                    <p>57.4%</p>
+                                                    <span>CPU</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="chart2"><svg></svg></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        </div>
+
+
+
+{% endblock %}

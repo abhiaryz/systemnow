@@ -1,0 +1,77 @@
+{% extends 'web/base.html' %}
+
+{% load static %}
+{% block body %}
+
+<div class="page-inner">
+                    <div class="page-title">
+                      <div  style="background-color:white">
+                       <button type="button" class="btn btn-outline-primary mr-5"><a href="/server1/">overview</a></button>
+                        <button type="button" class="btn btn-outline-primary"><a href="/server_cpu/">CPU</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_memory/">Memory</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_storage/">Storage</a></button>
+                      <button type="button" class="btn btn-outline-primary "><a href="/server_network/">Network</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_processes/">Processes</a></button>
+                      <button type="button" class="btn btn-outline-primary"><a href="/server_alert/">Alerting</a></button>
+                        <button type="button" class="btn btn-outline-primary"><a href="/server_incident/">Incidents</a></button>
+                                                <button type="button" 	id="datetime" class="btn btn-outline-primary pull-right"><a href="/server_incident/">Incidents</a></button>
+
+                      </div>
+                    </div>
+    <br>
+    <br>
+<div id="main-wrapper">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-white">
+
+                                <div class="panel-body">
+                                   <div class="table-responsive">
+                                    <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
+                                        <thead>
+                                            <tr>
+                                                <th>OS</th>
+                                                <th>Name</th>
+                                                <th>CPU</th>
+                                                <th>RAM</th>
+                                                <th>DISK</th>
+                                                <th>LOAD</th>
+                                                <th>NET</th>
+                                                <th>Uptime</th>
+
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Rhona Davidson</td>
+                                                <td>Integration Specialist</td>
+                                                <td>Tokyo</td>
+                                                <td>55</td>
+                                                <td>2010/10/14</td>
+                                                <td>$327,900</td>
+                                                <td>System Architect</td>
+                                                <td>Edinburgh</td>
+                                            </tr>
+
+
+
+
+                                        </tbody>
+                                       </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+</div>
+
+
+
+{% endblock %}
